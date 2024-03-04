@@ -3,7 +3,7 @@ import { AuthProvider } from "react-admin";
 export const authProvider: AuthProvider = {
   login: async ({ username, password }) => {
     localStorage.setItem("email", username);
-    const req = new Request(`${import.meta.env.VITE_SERVER_URL}auth/login`, {
+    const req = new Request(`${import.meta.env.VITE_SERVER_URL}/auth/login`, {
       method: "POST",
       body: JSON.stringify({ email: username, password }),
       headers: new Headers({ "Content-Type": "application/json" }),
